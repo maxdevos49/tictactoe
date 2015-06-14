@@ -24,16 +24,11 @@ class ViewController: UIViewController {
     //player turn variable
     var PlayerTurn = "Player1"
     
+    //game play variable that allows gameto be started and stopped
+    var gameplay:String = "True"
+    
     //variables to determine if a button was pressed
-    var button1:Int = 0
-    var button2:Int = 0
-    var button3:Int = 0
-    var button4:Int = 0
-    var button5:Int = 0
-    var button6:Int = 0
-    var button7:Int = 0
-    var button8:Int = 0
-    var button9:Int = 0
+    var button: [Int] = [0,0,0,0,0,0,0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +45,11 @@ class ViewController: UIViewController {
     //all new code is below this point other than variable declarations
     
     
-    
     //Top left button code
     @IBAction func TopLeftButton(sender: UIButton) {
         
         //check if button has been pressed before
-        if button1 == 0 {
+        if button[0] == 0 {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
@@ -70,20 +64,18 @@ class ViewController: UIViewController {
                 
                 PlayerTurn =  "Player1"
             }
-            else{//if it is neither players turn then a game end function will be called
-                
-            }
+
         }
         
         //change button variable so it cant be changed again
-        button1 = 1
-        
+        button[0] = 1
+        self.winning()
     }
     
     //Top center button code
     @IBAction func TopCenterButton(sender: UIButton) {
         
-        if button2 == 0 {
+        if button[1] == 0 {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
@@ -96,18 +88,16 @@ class ViewController: UIViewController {
                 
                 PlayerTurn =  "Player1"
             }
-            else{//if it is neither turn then a game end function will be called
-                
-            }
             
         }
-        button2 = 1
+        button[1] = 1
+        self.winning()
     }
     
     //Top right button code
     @IBAction func TopRightButton(sender: UIButton) {
         
-        if button3 == 0{
+        if button[2] == 0{
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
@@ -120,19 +110,17 @@ class ViewController: UIViewController {
                 
                 PlayerTurn =  "Player1"
             }
-            else{//if it is neither turn then a game end function will be called
-                
-            }
             
             
         }
-        button3 = 1
+        button[2] = 1
+        self.winning()
     }
     
     //middle left button code
     @IBAction func MiddleLeftButton(sender: UIButton) {
         
-        if button4 == 0 {
+        if button[3] == 0 {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
@@ -145,19 +133,17 @@ class ViewController: UIViewController {
                 
                 PlayerTurn =  "Player1"
             }
-            else{//if it is neither turn then a game end function will be called
-                
-            }
-            
+
             
         }
-        button4 = 1
+        button[3] = 1
+        self.winning()
     }
     
     //center button code
     @IBAction func CenterButton(sender: UIButton) {
         
-        if button5 == 0 {
+        if button[4] == 0 {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
@@ -170,19 +156,17 @@ class ViewController: UIViewController {
                 
                 PlayerTurn =  "Player1"
             }
-            else{//if it is neither turn then a game end function will be called
-                
-            }
             
             
         }
-        button5 = 1
+        button[4] = 1
+        self.winning()
     }
     
     //middle right button code
     @IBAction func MiddleRightButton(sender: UIButton) {
         
-        if button6 == 0 {
+        if button[5] == 0 {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
@@ -195,18 +179,15 @@ class ViewController: UIViewController {
                 
                 PlayerTurn =  "Player1"
             }
-            else{//if it is neither turn then a game end function will be called
-                
-            }
-            
         }
-        button6 = 1
+        button[5] = 1
+        self.winning()
     }
     
     //bottom left button code
     @IBAction func BottomLeftButton(sender: UIButton) {
         
-        if button7 == 0{
+        if button[6] == 0{
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{
@@ -219,18 +200,16 @@ class ViewController: UIViewController {
                 
                 PlayerTurn =  "Player1"
             }
-            else{//if it is neither turn then a game end function will be called
-                
-            }
             
         }
-        button7 = 1
+        button[6] = 1
+        self.winning()
     }
     
     //bottom center button code
     @IBAction func BottomCenterButton(sender: UIButton) {
         
-        if button8 == 0 {
+        if button[7] == 0 {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
@@ -243,18 +222,16 @@ class ViewController: UIViewController {
                 
                 PlayerTurn =  "Player1"
             }
-            else{//if it is neither turn then a game end function will be called
-                
-            }
             
         }
-        button8 = 1
+        button[7] = 1
+        self.winning()
     }
     
     //bottom right button code
     @IBAction func BottomRightButton(sender: UIButton) {
         
-        if button9 == 0 {
+        if button[8] == 0 {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
@@ -267,19 +244,89 @@ class ViewController: UIViewController {
                 
                 PlayerTurn =  "Player1"
             }
-            else{//if it is neither turn then a game end function will be called
-                
-            }
-            
             
         }
-        button9 = 1
+        button[8] = 1
+        self.winning()
+    }
+    
+    
+    //determine if the placement is a win
+    func winning() {
+        
+        
+        //variables to be placed into button arrays and manipulated to test each position
+        var a = 0
+        var b = 1
+        var c = 2
+        var gridcheck = 1
+        
+        
+        if gameplay == "True" {
+            
+            //horizontal check for win
+            
+            for gridcheck = 1; gridcheck < 4; ++gridcheck {
+                
+                if (button[a] == 1) && (button[b] == 1) && (button[c] == 1) {
+                    
+                    //add command to draw line here
+                    println("Winning horizontal")
+                    println(a)
+                    println(b)
+                    println(c)
+                    gameplay = "False"
+                    button = [1,1,1,1,1,1,1,1,1]
+                    break
+                }
+                // add 3 to each variable for the next check
+                a = a + 3
+                b = b + 3
+                c = c + 3
+                
+            }
+        }
+        
+        
+        //vertical check
+        a = 0
+        b = 3
+        c = 6
+        gridcheck = 1
+        if gameplay == "True" {
+            
+            for gridcheck = 1; gridcheck < 4; ++gridcheck {
+                
+                if (button[a] == 1) && (button[b] == 1) && (button[c] == 1) {
+                    
+                    println("Winning vertical")
+                    println(a)
+                    println(b)
+                    println(c)
+                    gameplay = "False"
+                    button = [1,1,1,1,1,1,1,1,1]
+                    break
+                    
+                }
+                
+                a = a + 1
+                b = b + 1
+                c = c + 1
+            }
+            //diagonal check
+            
+            if ((button[0] == 1) && (button[4] == 1) && (button[8] == 1)) ?? ((button[2] == 1) && (button[4] == 1) && (button[6] == 1)) {
+                
+                println("Winning diagonal")
+                gameplay = "False"
+                button = [1,1,1,1,1,1,1,1,1]
+                
+                
+            }
+        }
+        
     }
 }
-
-
-
-
 
 
 
