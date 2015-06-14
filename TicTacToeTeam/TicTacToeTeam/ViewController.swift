@@ -57,18 +57,20 @@ class ViewController: UIViewController {
                 self.TopLeftText.setTitle("X", forState: UIControlState.Normal)
                 
                 PlayerTurn = "Player2"//player 2 turn is set
+                button[0] = 1
                 
             }
             else if PlayerTurn == "Player2"{//o is checked
                 self.TopLeftText.setTitle("O", forState: UIControlState.Normal)
                 
                 PlayerTurn =  "Player1"
+                button[0] = 2
             }
 
         }
         
         //change button variable so it cant be changed again
-        button[0] = 1
+        
         self.winning()
     }
     
@@ -82,15 +84,17 @@ class ViewController: UIViewController {
                 self.TopCenterText.setTitle("X", forState: UIControlState.Normal)
                 
                 PlayerTurn = "Player2"//player 2 turn is set
+                 button[1] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
                 self.TopCenterText.setTitle("O", forState: UIControlState.Normal)
                 
                 PlayerTurn =  "Player1"
+                 button[1] = 2
             }
             
         }
-        button[1] = 1
+       
         self.winning()
     }
     
@@ -104,16 +108,18 @@ class ViewController: UIViewController {
                 self.TopRightText.setTitle("X", forState: UIControlState.Normal)
                 
                 PlayerTurn = "Player2"//player 2 turn is set
+                button[2] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
                 self.TopRightText.setTitle("O", forState: UIControlState.Normal)
                 
                 PlayerTurn =  "Player1"
+                button[2] = 2
             }
             
             
         }
-        button[2] = 1
+        
         self.winning()
     }
     
@@ -127,16 +133,18 @@ class ViewController: UIViewController {
                 self.MiddleLeftText.setTitle("X", forState: UIControlState.Normal)
                 
                 PlayerTurn = "Player2"//player 2 turn is set
+                button[3] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
                 self.MiddleLeftText.setTitle("O", forState: UIControlState.Normal)
                 
                 PlayerTurn =  "Player1"
+                button[3] = 2
             }
 
             
         }
-        button[3] = 1
+        
         self.winning()
     }
     
@@ -150,16 +158,18 @@ class ViewController: UIViewController {
                 self.CenterText.setTitle("X", forState: UIControlState.Normal)
                 
                 PlayerTurn = "Player2"//player 2 turn is set
+                button[4] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
                 self.CenterText.setTitle("O", forState: UIControlState.Normal)
                 
                 PlayerTurn =  "Player1"
+                button[4] = 2
             }
             
             
         }
-        button[4] = 1
+        
         self.winning()
     }
     
@@ -173,14 +183,16 @@ class ViewController: UIViewController {
                 self.MiddleRightText.setTitle("X", forState: UIControlState.Normal)
                 
                 PlayerTurn = "Player2"//player 2 turn is set
+                button[5] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
                 self.MiddleRightText.setTitle("O", forState: UIControlState.Normal)
                 
                 PlayerTurn =  "Player1"
+                button[5] = 2
             }
         }
-        button[5] = 1
+        
         self.winning()
     }
     
@@ -194,15 +206,17 @@ class ViewController: UIViewController {
                 self.BottomLeftText.setTitle("X", forState: UIControlState.Normal)
                 
                 PlayerTurn = "Player2"//player 2 turn is set
+                button[6] = 1
             }
             else if PlayerTurn == "Player2"{
                 self.BottomLeftText.setTitle("O", forState: UIControlState.Normal)
                 
                 PlayerTurn =  "Player1"
+                button[6] = 2
             }
             
         }
-        button[6] = 1
+        
         self.winning()
     }
     
@@ -216,15 +230,17 @@ class ViewController: UIViewController {
                 self.BottomCenterText.setTitle("X", forState: UIControlState.Normal)
                 
                 PlayerTurn = "Player2"//player 2 turn is set
+                button[7] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
                 self.BottomCenterText.setTitle("O", forState: UIControlState.Normal)
                 
                 PlayerTurn =  "Player1"
+                button[7] = 2
             }
             
         }
-        button[7] = 1
+        
         self.winning()
     }
     
@@ -238,15 +254,17 @@ class ViewController: UIViewController {
                 self.BottomRightText.setTitle("X", forState: UIControlState.Normal)
                 
                 PlayerTurn = "Player2"//player 2 turn is set
+                button[8] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
                 self.BottomRightText.setTitle("O", forState: UIControlState.Normal)
                 
                 PlayerTurn =  "Player1"
+                button[8] = 2
             }
             
         }
-        button[8] = 1
+        
         self.winning()
     }
     
@@ -256,76 +274,89 @@ class ViewController: UIViewController {
         
         
         //variables to be placed into button arrays and manipulated to test each position
-        var a = 0
-        var b = 1
-        var c = 2
-        var gridcheck = 1
         
+        //button variable check number 1
+        var a:Int = 0
+        //button variable check number 2
+        var b:Int = 1
+        //button variabel check number 3
+        var c:Int = 2
+        
+        //variable that is added to manipulate the section that is checked
+        var d:Int = 3
+        
+        //variable used to determine if x's or o's are checked
+        var e:Int = 1
+        
+        //for loops variables
+        var gridcheck:Int
+        var directioncheck:Int
+        var lettercheck:Int
         
         if gameplay == "True" {
             
-            //horizontal check for win
-            
-            for gridcheck = 1; gridcheck < 4; ++gridcheck {
+            //check for both x's and o's
+            for lettercheck = 1; lettercheck < 4; ++lettercheck {
                 
-                if (button[a] == 1) && (button[b] == 1) && (button[c] == 1) {
+                //decide which direction to check -horizontal = 1  -vertical = 2
+                for directioncheck = 1; directioncheck < 3; ++directioncheck {
                     
-                    //add command to draw line here
-                    println("Winning horizontal")
-                    println(a)
-                    println(b)
-                    println(c)
-                    gameplay = "False"
-                    button = [1,1,1,1,1,1,1,1,1]
-                    break
+                    //decide to check which grid section to check
+                    for gridcheck = 1; gridcheck < 4; ++gridcheck {
+                        
+                        //check if a specific section has won
+                        if (button[a] == e) && (button[b] == e) && (button[c] == e) {
+                            
+                            //add command to draw line here
+                            
+                            //debug text to be printed in console when no line is present
+                            println("Winning for \(e) ")
+                            println(a)
+                            println(b)
+                            println(c)
+                            
+                            //set gameplay to false so it can not be checked for a win any longer
+                            gameplay = "False"
+                            
+                            //set button values to 3 so they can not be pressed
+                            button = [3,3,3,3,3,3,3,3,3]
+                            
+                            //break the code so it stops executing after a win is found
+                            break
+                        }
+                        // add 3 to each variable for the next check
+                        a = a + d
+                        b = b + d
+                        c = c + d
+                        
+                    }
+                    
+                    //change variables for vertical check
+                    a = 0
+                    b = 3
+                    c = 6
+                    d = 1
+                    
                 }
-                // add 3 to each variable for the next check
-                a = a + 3
-                b = b + 3
-                c = c + 3
+                e = 2
                 
-            }
-        }
-        
-        
-        //vertical check
-        a = 0
-        b = 3
-        c = 6
-        gridcheck = 1
-        if gameplay == "True" {
-            
-            for gridcheck = 1; gridcheck < 4; ++gridcheck {
                 
-                if (button[a] == 1) && (button[b] == 1) && (button[c] == 1) {
+                //diagonal check
+                
+                if ((button[0] == e) && (button[4] == e) && (button[8] == e)) ?? ((button[2] == e) && (button[4] == e) && (button[6] == e)) {
                     
-                    println("Winning vertical")
-                    println(a)
-                    println(b)
-                    println(c)
+                    println("Winning diagonal for \(e)")
                     gameplay = "False"
-                    button = [1,1,1,1,1,1,1,1,1]
-                    break
+                    button = [3,3,3,3,3,3,3,3,3]
                     
                 }
                 
-                a = a + 1
-                b = b + 1
-                c = c + 1
             }
-            //diagonal check
-            
-            if ((button[0] == 1) && (button[4] == 1) && (button[8] == 1)) ?? ((button[2] == 1) && (button[4] == 1) && (button[6] == 1)) {
-                
-                println("Winning diagonal")
-                gameplay = "False"
-                button = [1,1,1,1,1,1,1,1,1]
-                
-                
-            }
+
         }
-        
+        e = 2
     }
+
 }
 
 
