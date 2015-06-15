@@ -286,7 +286,7 @@ class ViewController: UIViewController {
         var d:Int = 3
         
         //variable used to determine if x's or o's are checked
-        var e:Int = 1
+        var e:Int
         
         //for loops variables
         var gridcheck:Int
@@ -295,69 +295,15 @@ class ViewController: UIViewController {
         
         if gameplay == "True" {
             
-            //check for both x's and o's
-            for lettercheck = 1; lettercheck < 4; ++lettercheck {
-                
-                //decide which direction to check -horizontal = 1  -vertical = 2
-                for directioncheck = 1; directioncheck < 3; ++directioncheck {
-                    
-                    //decide to check which grid section to check
-                    for gridcheck = 1; gridcheck < 4; ++gridcheck {
-                        
-                        //check if a specific section has won
-                        if (button[a] == e) && (button[b] == e) && (button[c] == e) {
-                            
-                            //add command to draw line here
-                            
-                            //debug text to be printed in console when no line is present
-                            println("Winning for \(e) ")
-                            println(a)
-                            println(b)
-                            println(c)
-                            
-                            //set gameplay to false so it can not be checked for a win any longer
-                            gameplay = "False"
-                            
-                            //set button values to 3 so they can not be pressed
-                            button = [3,3,3,3,3,3,3,3,3]
-                            
-                            //break the code so it stops executing after a win is found
-                            break
-                        }
-                        // add 3 to each variable for the next check
-                        a = a + d
-                        b = b + d
-                        c = c + d
-                        
-                    }
-                    
-                    //change variables for vertical check
-                    a = 0
-                    b = 3
-                    c = 6
-                    d = 1
-                    
-                }
-                e = 2
-                
-                
-                //diagonal check
-                
-                if ((button[0] == e) && (button[4] == e) && (button[8] == e)) ?? ((button[2] == e) && (button[4] == e) && (button[6] == e)) {
-                    
-                    println("Winning diagonal for \(e)")
-                    gameplay = "False"
-                    button = [3,3,3,3,3,3,3,3,3]
-                    
-                }
-                
-            }
-
+            
+            
         }
-        e = 2
-    }
-
-}
+        
+        
+    }//end of winning function
+    
+    
+}//end of main class
 
 
 
