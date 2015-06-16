@@ -272,33 +272,67 @@ class ViewController: UIViewController {
     //determine if the placement is a win
     func winning() {
         
+        var a:Int
+        var b:Int
+        var c:Int
         
-        //variables to be placed into button arrays and manipulated to test each position
-        
-        //button variable check number 1
-        var a:Int = 0
-        //button variable check number 2
-        var b:Int = 1
-        //button variabel check number 3
-        var c:Int = 2
-        
-        //variable that is added to manipulate the section that is checked
-        var d:Int = 3
-        
-        //variable used to determine if x's or o's are checked
-        var e:Int
-        
-        //for loops variables
-        var gridcheck:Int
-        var directioncheck:Int
-        var lettercheck:Int
+        var buttcheck1:Int = 0
+        var buttcheck2:Int = 1
+        var buttcheck3:Int = 2
+        var buttIncrement:Int = 3
+        var buttvaluetype:Int = 1
         
         if gameplay == "True" {
             
+            for a = 1;a <= 2; ++a {
             
+            for b = 1; b <= 2; ++b {
+                
+                for c = 1; c <= 3; ++c {
+                    
+                    if (button[buttcheck1] == buttvaluetype) && (button[buttcheck2] == buttvaluetype) && (button[buttcheck3] == buttvaluetype) {
+                        
+                        println("You win")
+                        gameplay = "False"
+                        button = [3,3,3,3,3,3,3,3,3]
+                        break
+                    }
+                    
+                    buttcheck1 = buttcheck1 + buttIncrement
+                    buttcheck2 = buttcheck2 + buttIncrement
+                    buttcheck3 = buttcheck3 + buttIncrement
+                    
+                }//end of third for loop
+                
+                buttcheck1 = 0
+                buttcheck2 = 3
+                buttcheck3 = 6
+                buttIncrement = 1
+                
+            }//end of second for loop
+                
+                if (button[0] == buttvaluetype) && (button[4] == buttvaluetype) && (button[8] == buttvaluetype) {
+                    println("You win negative diagonal")
+                    gameplay = "False"
+                    button = [3,3,3,3,3,3,3,3,3]
+                    break
+                }
+                if (button[2] == buttvaluetype) && (button[4] == buttvaluetype) && (button[6] == buttvaluetype) {
+                    println("You win positive diagonal")
+                    gameplay = "False"
+                    button = [3,3,3,3,3,3,3,3,3]
+                    break
+                }
+                
+                buttcheck1 = 0
+                buttcheck2 = 1
+                buttcheck3 = 2
+                buttIncrement = 3
+                buttvaluetype = 2
+                
+            }//end of first loop
             
-        }
-        
+        }//end of gameplay if statement
         
     }//end of winning function
     
