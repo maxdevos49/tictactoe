@@ -59,23 +59,6 @@ class ViewController: UIViewController {
                 PlayerTurn = "Player2"//player 2 turn is set
                 button[0] = 1
                 
-                let cat = UIView()
-                cat.frame = CGRect(x: 3, y: 3, width: 4, height: 4)
-                cat.backgroundColor = UIColor.blueColor()
-                self.view.addSubview(cat)
-                
-                let duration = 3.0
-                let delay = 0.0
-                let options = UIViewAnimationOptions.Repeat
-                UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
-                    cat.frame = CGRect(x: 100, y: 300, width: 100, height: 200)
-                    cat.backgroundColor = UIColor.yellowColor()
-                    }, completion:{ finished in
-                        
-                })
-                
-                
-                
             }
             else if PlayerTurn == "Player2"{//o is checked
                 self.TopLeftText.setTitle("O", forState: UIControlState.Normal)
