@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     //player turn variable
     var PlayerTurn = "Player1"
     
-    //game play variable that allows gameto be started and stopped
+    //game play variable that allows game to be started and stopped
     var gameplay:String = "True"
     
     //variables to determine if a button was pressed
@@ -335,6 +335,29 @@ class ViewController: UIViewController {
         }//end of gameplay if statement
         
     }//end of winning function
+    
+    //Reset sequence
+    @IBAction func ResetButton(sender: UIButton) {
+        
+        //reset button values
+        button = [0,0,0,0,0,0,0,0,0]
+        
+        //reset button text to none/null
+        self.TopLeftText.setTitle("", forState: UIControlState.Normal)
+        self.TopCenterText.setTitle("", forState: UIControlState.Normal)
+        self.TopRightText.setTitle("", forState: UIControlState.Normal)
+        self.MiddleLeftText.setTitle("", forState: UIControlState.Normal)
+        self.CenterText.setTitle("", forState: UIControlState.Normal)
+        self.MiddleRightText.setTitle("", forState: UIControlState.Normal)
+        self.BottomLeftText.setTitle("", forState: UIControlState.Normal)
+        self.BottomCenterText.setTitle("", forState: UIControlState.Normal)
+        self.BottomRightText.setTitle("", forState: UIControlState.Normal)
+        
+        //set gameplay to true
+        gameplay = "True"
+        
+    }
+    
     
     
 }//end of main class
