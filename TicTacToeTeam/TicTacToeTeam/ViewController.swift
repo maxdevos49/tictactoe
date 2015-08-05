@@ -335,7 +335,7 @@ class ViewController: UIViewController {
                             
                             if (button[buttcheck1] == buttvaluetype) && (button[buttcheck2] == buttvaluetype) && (button[buttcheck3] == buttvaluetype) {
                                 
-                                println("You win")
+                                //println("You win")
                                 gameplay = "False"
                                 button = [3,3,3,3,3,3,3,3,3]
                                 
@@ -371,7 +371,7 @@ class ViewController: UIViewController {
                                 
                                 }
                                 scoreModifier()
-                                println(PlayerWinner)
+                                //println(PlayerWinner)
                                 break
                             }
                             
@@ -389,7 +389,7 @@ class ViewController: UIViewController {
                     }//end of second for loop
                     
                     if (button[0] == buttvaluetype) && (button[4] == buttvaluetype) && (button[8] == buttvaluetype) {
-                        println("You win negative diagonal")
+                        //println("You win negative diagonal")
                         gameplay = "False"
                         button = [3,3,3,3,3,3,3,3,3]
                         
@@ -425,11 +425,11 @@ class ViewController: UIViewController {
                             
                         }
                         scoreModifier()
-                        println(PlayerWinner)
+                        //println(PlayerWinner)
                         break
                     }
                     if (button[2] == buttvaluetype) && (button[4] == buttvaluetype) && (button[6] == buttvaluetype) {
-                        println("You win positive diagonal")
+                        //println("You win positive diagonal")
                         gameplay = "False"
                         button = [3,3,3,3,3,3,3,3,3]
                         
@@ -465,7 +465,7 @@ class ViewController: UIViewController {
                             
                         }
                         scoreModifier()
-                        println(PlayerWinner)
+                        //println(PlayerWinner)
                         break
                     }
                     
