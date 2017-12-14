@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var BottomCenterText: UIButton!
     @IBOutlet weak var BottomRightText: UIButton!
     
+    
     //Bottom area text variables
     @IBOutlet weak var p1MarkType: UILabel!
     @IBOutlet weak var p2MarkType: UILabel!
@@ -57,498 +58,521 @@ class ViewController: UIViewController {
     //all new code is below this point other than variable declarations
     
     
-    //Top left button code
-    @IBAction func TopLeftButton(sender: UIButton) {
-        
-        //check if button has been pressed before
-        if button[0] == 0 {
-            
-            butTouched = "True"
-            
-            //check if its x's or o's turn
-            if PlayerTurn == "Player1"{//x is checked
-                
-                self.TopLeftText.setTitle("X", for: [])
-                
-                button[0] = 1
-                
-            }
-            else if PlayerTurn == "Player2"{//o is checked
-                self.TopLeftText.setTitle("O", for: [])
-                
-                button[0] = 2
-            }
-
-        }
-        
-        //change button variable so it cant be changed again
-        
-        self.winning()
-    }
-    
-    //Top center button code
-    @IBAction func TopCenterButton(sender: UIButton) {
-        
-        if button[1] == 0 {
-            
-            butTouched = "True"
-            
-            //check if its x's or o's turn
-            if PlayerTurn == "Player1"{//x is checked
-                self.TopCenterText.setTitle("X", for: [])
-                
-                 button[1] = 1
-            }
-            else if PlayerTurn == "Player2"{//o is checked
-                self.TopCenterText.setTitle("O", for: [])
-                
-                 button[1] = 2
-            }
-            
-        }
-       
-        self.winning()
-    }
-    
-    //Top right button code
-    @IBAction func TopRightButton(sender: UIButton) {
-        
-        if button[2] == 0{
-            
-            butTouched = "True"
-            
-            //check if its x's or o's turn
-            if PlayerTurn == "Player1"{//x is checked
-                self.TopRightText.setTitle("X", for: [])
-                
-                button[2] = 1
-            }
-            else if PlayerTurn == "Player2"{//o is checked
-                self.TopRightText.setTitle("O", for: [])
-                
-                button[2] = 2
-            }
-            
-            
-        }
-        
-        self.winning()
-    }
-    
-    //middle left button code
-    @IBAction func MiddleLeftButton(sender: UIButton) {
-        
-        if button[3] == 0 {
-            
-            butTouched = "True"
-            
-            //check if its x's or o's turn
-            if PlayerTurn == "Player1"{//x is checked
-                self.MiddleLeftText.setTitle("X", for: [])
-                
-                button[3] = 1
-            }
-            else if PlayerTurn == "Player2"{//o is checked
-                self.MiddleLeftText.setTitle("O", for: [])
-                
-                button[3] = 2
-            }
-
-            
-        }
-        
-        self.winning()
-    }
-    
-    //center button code
-    @IBAction func CenterButton(sender: UIButton) {
-        
-        if button[4] == 0 {
-            
-            butTouched = "True"
-            
-            //check if its x's or o's turn
-            if PlayerTurn == "Player1"{//x is checked
-                self.CenterText.setTitle("X", for: [])
-                
-                button[4] = 1
-            }
-            else if PlayerTurn == "Player2"{//o is checked
-                self.CenterText.setTitle("O", for: [])
-                
-                button[4] = 2
-            }
-            
-            
-        }
-        
-        self.winning()
-    }
-    
-    //middle right button code
-    @IBAction func MiddleRightButton(sender: UIButton) {
-        
-        if button[5] == 0 {
-            
-            butTouched = "True"
-            
-            //check if its x's or o's turn
-            if PlayerTurn == "Player1"{//x is checked
-                self.MiddleRightText.setTitle("X", for: [])
-                
-                button[5] = 1
-            }
-            else if PlayerTurn == "Player2"{//o is checked
-                self.MiddleRightText.setTitle("O", for: [])
-                
-                button[5] = 2
-            }
-        }
-        
-        self.winning()
-    }
-    
-    //bottom left button code
-    @IBAction func BottomLeftButton(sender: UIButton) {
-        
-        if button[6] == 0{
-            
-            butTouched = "True"
-            
-            //check if its x's or o's turn
-            if PlayerTurn == "Player1"{
-                self.BottomLeftText.setTitle("X", for: [])
-                
-                button[6] = 1
-            }
-            else if PlayerTurn == "Player2"{
-                self.BottomLeftText.setTitle("O", for: [])
-                
-                button[6] = 2
-            }
-            
-        }
-        
-        self.winning()
-    }
-    
-    //bottom center button code
-    @IBAction func BottomCenterButton(sender: UIButton) {
-        
-        if button[7] == 0 {
-            
-            butTouched = "True"
-            
-            //check if its x's or o's turn
-            if PlayerTurn == "Player1"{//x is checked
-                self.BottomCenterText.setTitle("X", for: [])
-                
-                button[7] = 1
-            }
-            else if PlayerTurn == "Player2"{//o is checked
-                self.BottomCenterText.setTitle("O", for: [])
-                
-                button[7] = 2
-            }
-            
-        }
-        
-        self.winning()
-    }
-    
-    //bottom right button code
-    @IBAction func BottomRightButton(sender: UIButton) {
-        
-        if button[8] == 0 {
-            
-            butTouched = "True"
-            
-            //check if its x's or o's turn
-            if PlayerTurn == "Player1"{//x is checked
-                self.BottomRightText.setTitle("X", for: [])
-                
-                
-                button[8] = 1
-            }
-            else if PlayerTurn == "Player2"{//o is checked
-                self.BottomRightText.setTitle("O", for: [])
-                
-                
-                button[8] = 2
-            }
-            
-        }
-        
-        self.winning()
-    }
     
     
-    //determine if the placement is a win
-    func winning() {
-        
-        if gameplay == "True" {
-            
-            if butTouched == "True" {
-                butTouched = "False"
-                
-                //fill me in
-                var a:Int
-                var b:Int
-                var c:Int
-                
-                var buttcheck1:Int = 0
-                var buttcheck2:Int = 1
-                var buttcheck3:Int = 2
-                var buttIncrement:Int = 3
-                var buttvaluetype:Int = 1
-                
-                
-                if PlayerTurn == "Player1" {
-                    
-                    if PlayerWinner == "Player1" {
-                        self.playerTurnText.text = ">>>"
-                        
-                    }else if PlayerWinner == "Player2"{
-                        self.playerTurnText.text = "<<<"
-                    }
-                    
-                    PlayerTurn = "Player2"
-                    
-                }else if PlayerTurn == "Player2" {
-                    
-                    if PlayerWinner == "Player1" {
-                        self.playerTurnText.text = "<<<"
-                        
-                    }else if PlayerWinner == "Player2"{
-                        self.playerTurnText.text = ">>>"
-                    }
-                    
-                    PlayerTurn = "Player1"
-                    
-                }
-                
-                for a in 0..<3 {
-                    
-                    for b in 0..<3 {
-                        
-                        for c in 0..<4 {
-                            
-                            if (button[buttcheck1] == buttvaluetype) && (button[buttcheck2] == buttvaluetype) && (button[buttcheck3] == buttvaluetype) {
-                                
-                                //println("You win")
-                                gameplay = "False"
-                                button = [3,3,3,3,3,3,3,3,3]
-                                
-                                //check whos turn it is in this mess
-                                if PlayerTurn == "Player1" {
-                                    
-                                    //see who was the last winner
-                                    if PlayerWinner == "Player1" {
-                                        
-                                        PlayerWinner = "Player2"
-                                        
-                                    //see who was the last winner
-                                    }else if PlayerWinner == "Player2"{
-
-                                        PlayerWinner = "Player1"
-                                    }
-                                
-                                    
-                                    //check whos turn it is
-                                }else if PlayerTurn == "Player2" {
-                                    
-                                    //see who was the last winner
-                                    if PlayerWinner == "Player1" {
-                                        
-                                        PlayerWinner = "Player1"
-                                        
-                                    //see who was the last winner
-                                    }else if PlayerWinner == "Player2"{
-
-                                        PlayerWinner = "Player2"
-                                        
-                                    }
-                                
-                                }
-                                scoreModifier()
-                                //println(PlayerWinner)
-                                break
-                            }
-                            
-                            buttcheck1 = buttcheck1 + buttIncrement
-                            buttcheck2 = buttcheck2 + buttIncrement
-                            buttcheck3 = buttcheck3 + buttIncrement
-                            
-                        }//end of third for loop
-                        
-                        buttcheck1 = 0
-                        buttcheck2 = 3
-                        buttcheck3 = 6
-                        buttIncrement = 1
-                        
-                    }//end of second for loop
-                    
-                    if (button[0] == buttvaluetype) && (button[4] == buttvaluetype) && (button[8] == buttvaluetype) {
-                        //println("You win negative diagonal")
-                        gameplay = "False"
-                        button = [3,3,3,3,3,3,3,3,3]
-                        
-                        //check whos turn it is in this mess
-                        if PlayerTurn == "Player1" {
-                            
-                            //see who was the last winner
-                            if PlayerWinner == "Player1" {
-                                
-                                PlayerWinner = "Player2"
-                                
-                                //see who was the last winner
-                            }else if PlayerWinner == "Player2"{
-                                
-                                PlayerWinner = "Player1"
-                            }
-                            
-                            
-                            //check whos turn it is
-                        }else if PlayerTurn == "Player2" {
-                            
-                            //see who was the last winner
-                            if PlayerWinner == "Player1" {
-                                
-                                PlayerWinner = "Player1"
-                                
-                                //see who was the last winner
-                            }else if PlayerWinner == "Player2"{
-                                
-                                PlayerWinner = "Player2"
-                                
-                            }
-                            
-                        }
-                        scoreModifier()
-                        //println(PlayerWinner)
-                        break
-                    }
-                    if (button[2] == buttvaluetype) && (button[4] == buttvaluetype) && (button[6] == buttvaluetype) {
-                        //println("You win positive diagonal")
-                        gameplay = "False"
-                        button = [3,3,3,3,3,3,3,3,3]
-                        
-                        //check whos turn it is in this mess
-                        if PlayerTurn == "Player1" {
-                            
-                            //see who was the last winner
-                            if PlayerWinner == "Player1" {
-                                
-                                PlayerWinner = "Player2"
-                                
-                                //see who was the last winner
-                            }else if PlayerWinner == "Player2"{
-                                
-                                PlayerWinner = "Player1"
-                            }
-                            
-                            
-                            //check whos turn it is
-                        }else if PlayerTurn == "Player2" {
-                            
-                            //see who was the last winner
-                            if PlayerWinner == "Player1" {
-                                
-                                PlayerWinner = "Player1"
-                                
-                                //see who was the last winner
-                            }else if PlayerWinner == "Player2"{
-                                
-                                PlayerWinner = "Player2"
-                                
-                            }
-                            
-                        }
-                        scoreModifier()
-                        //println(PlayerWinner)
-                        break
-                    }
-                    
-                    buttcheck1 = 0
-                    buttcheck2 = 1
-                    buttcheck3 = 2
-                    buttIncrement = 3
-                    buttvaluetype = 2
-                    
-                }//end of first loop
-                
-                
-                //change the player turn indicator
-                
-                
-            }
-            
-        }//end of gameplay if statement
-        
-    }//end of winning function
-    
-    func scoreModifier() {
-        
-        if PlayerWinner == "Player1" {
-            
-            p1ScoreIncrement = p1ScoreIncrement + 1
-            self.p1ScoreText.text = String(p1ScoreIncrement)
-            
-        }else if PlayerWinner == "Player2" {
-            
-            p2ScoreIncrement = p2ScoreIncrement + 1
-            self.p2ScoreText.text = String(p2ScoreIncrement)
-            
-        }
-    }
-    
-    //Reset sequence
-    @IBAction func ResetButton(sender: UIButton) {
-        
-        if PlayerWinner == "Player2" {
-            
-            self.p1MarkType.text = "O's"
-            self.p2MarkType.text = "X's"
-            
-            self.playerTurnText.text = ">>>"
-            //rightWin = "True"
-            
-            
-    
-        
-        }else if PlayerWinner == "Player1"{
-            
-            self.p1MarkType.text = "X's"
-            self.p2MarkType.text = "O's"
-            
-            self.playerTurnText.text = "<<<"
-            //leftWin = "True"
-        }
-        
-        PlayerTurn = "Player1"
-        
-        //reset button values
-        button = [0,0,0,0,0,0,0,0,0]
-        
-
-        
-        //reset button text to none/null
-        self.TopLeftText.setTitle("", for: [])
-        self.TopCenterText.setTitle("", for: [])
-        self.TopRightText.setTitle("", for: [])
-        self.MiddleLeftText.setTitle("", for: [])
-        self.CenterText.setTitle("", for: [])
-        self.MiddleRightText.setTitle("", for: [])
-        self.BottomLeftText.setTitle("", for: [])
-        self.BottomCenterText.setTitle("", for: [])
-        self.BottomRightText.setTitle("", for: [])
-        
-        //set gameplay to true
-        gameplay = "True"
-        
-    }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+//    //Write new code for button function! Save lines!
+//    //That is, once the buttons work again.
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//    //Top left button code
+//    @IBAction func TopLeftButton(sender: UIButton) {
+//
+//        //check if button has been pressed before
+//        if button[0] == 0 {
+//
+//            butTouched = "True"
+//
+//            //check if its x's or o's turn
+//            if PlayerTurn == "Player1"{//x is checked
+//
+//                self.TopLeftText.setTitle("X", for: [])
+//
+//                button[0] = 1
+//
+//            }
+//            else if PlayerTurn == "Player2"{//o is checked
+//                self.TopLeftText.setTitle("O", for: [])
+//
+//                button[0] = 2
+//            }
+//
+//        }
+//
+//        //change button variable so it cant be changed again
+//
+//        self.winning()
+//    }
+//
+//    //Top center button code
+//    @IBAction func TopCenterButton(sender: UIButton) {
+//
+//        if button[1] == 0 {
+//
+//            butTouched = "True"
+//
+//            //check if its x's or o's turn
+//            if PlayerTurn == "Player1"{//x is checked
+//                self.TopCenterText.setTitle("X", for: [])
+//
+//                 button[1] = 1
+//            }
+//            else if PlayerTurn == "Player2"{//o is checked
+//                self.TopCenterText.setTitle("O", for: [])
+//
+//                 button[1] = 2
+//            }
+//
+//        }
+//
+//        self.winning()
+//    }
+//
+//    //Top right button code
+//    @IBAction func TopRightButton(sender: UIButton) {
+//
+//        if button[2] == 0{
+//
+//            butTouched = "True"
+//
+//            //check if its x's or o's turn
+//            if PlayerTurn == "Player1"{//x is checked
+//                self.TopRightText.setTitle("X", for: [])
+//
+//                button[2] = 1
+//            }
+//            else if PlayerTurn == "Player2"{//o is checked
+//                self.TopRightText.setTitle("O", for: [])
+//
+//                button[2] = 2
+//            }
+//
+//
+//        }
+//
+//        self.winning()
+//    }
+//
+//    //middle left button code
+//    @IBAction func MiddleLeftButton(sender: UIButton) {
+//
+//        if button[3] == 0 {
+//
+//            butTouched = "True"
+//
+//            //check if its x's or o's turn
+//            if PlayerTurn == "Player1"{//x is checked
+//                self.MiddleLeftText.setTitle("X", for: [])
+//
+//                button[3] = 1
+//            }
+//            else if PlayerTurn == "Player2"{//o is checked
+//                self.MiddleLeftText.setTitle("O", for: [])
+//
+//                button[3] = 2
+//            }
+//
+//
+//        }
+//
+//        self.winning()
+//    }
+//
+//    //center button code
+//    @IBAction func CenterButton(sender: UIButton) {
+//
+//        if button[4] == 0 {
+//
+//            butTouched = "True"
+//
+//            //check if its x's or o's turn
+//            if PlayerTurn == "Player1"{//x is checked
+//                self.CenterText.setTitle("X", for: [])
+//
+//                button[4] = 1
+//            }
+//            else if PlayerTurn == "Player2"{//o is checked
+//                self.CenterText.setTitle("O", for: [])
+//
+//                button[4] = 2
+//            }
+//
+//
+//        }
+//
+//        self.winning()
+//    }
+//
+//    //middle right button code
+//    @IBAction func MiddleRightButton(sender: UIButton) {
+//
+//        if button[5] == 0 {
+//
+//            butTouched = "True"
+//
+//            //check if its x's or o's turn
+//            if PlayerTurn == "Player1"{//x is checked
+//                self.MiddleRightText.setTitle("X", for: [])
+//
+//                button[5] = 1
+//            }
+//            else if PlayerTurn == "Player2"{//o is checked
+//                self.MiddleRightText.setTitle("O", for: [])
+//
+//                button[5] = 2
+//            }
+//        }
+//
+//        self.winning()
+//    }
+//
+//    //bottom left button code
+//    @IBAction func BottomLeftButton(sender: UIButton) {
+//
+//        if button[6] == 0{
+//
+//            butTouched = "True"
+//
+//            //check if its x's or o's turn
+//            if PlayerTurn == "Player1"{
+//                self.BottomLeftText.setTitle("X", for: [])
+//
+//                button[6] = 1
+//            }
+//            else if PlayerTurn == "Player2"{
+//                self.BottomLeftText.setTitle("O", for: [])
+//
+//                button[6] = 2
+//            }
+//
+//        }
+//
+//        self.winning()
+//    }
+//
+//    //bottom center button code
+//    @IBAction func BottomCenterButton(sender: UIButton) {
+//
+//        if button[7] == 0 {
+//
+//            butTouched = "True"
+//
+//            //check if its x's or o's turn
+//            if PlayerTurn == "Player1"{//x is checked
+//                self.BottomCenterText.setTitle("X", for: [])
+//
+//                button[7] = 1
+//            }
+//            else if PlayerTurn == "Player2"{//o is checked
+//                self.BottomCenterText.setTitle("O", for: [])
+//
+//                button[7] = 2
+//            }
+//
+//        }
+//
+//        self.winning()
+//    }
+//
+//    //bottom right button code
+//    @IBAction func BottomRightButton(sender: UIButton) {
+//
+//        if button[8] == 0 {
+//
+//            butTouched = "True"
+//
+//            //check if its x's or o's turn
+//            if PlayerTurn == "Player1"{//x is checked
+//                self.BottomRightText.setTitle("X", for: [])
+//
+//
+//                button[8] = 1
+//            }
+//            else if PlayerTurn == "Player2"{//o is checked
+//                self.BottomRightText.setTitle("O", for: [])
+//
+//
+//                button[8] = 2
+//            }
+//
+//        }
+//
+//        self.winning()
+//    }
+//
+//
+//    //determine if the placement is a win
+//    func winning() {
+//
+//        if gameplay == "True" {
+//
+//            if butTouched == "True" {
+//                butTouched = "False"
+//
+//                //fill me in
+//                var _:Int
+//                var _:Int
+//                var _:Int
+//
+//                var buttcheck1:Int = 0
+//                var buttcheck2:Int = 1
+//                var buttcheck3:Int = 2
+//                var buttIncrement:Int = 3
+//                var buttvaluetype:Int = 1
+//
+//
+//                if PlayerTurn == "Player1" {
+//
+//                    if PlayerWinner == "Player1" {
+//                        self.playerTurnText.text = ">>>"
+//
+//                    }else if PlayerWinner == "Player2"{
+//                        self.playerTurnText.text = "<<<"
+//                    }
+//
+//                    PlayerTurn = "Player2"
+//
+//                }else if PlayerTurn == "Player2" {
+//
+//                    if PlayerWinner == "Player1" {
+//                        self.playerTurnText.text = "<<<"
+//
+//                    }else if PlayerWinner == "Player2"{
+//                        self.playerTurnText.text = ">>>"
+//                    }
+//
+//                    PlayerTurn = "Player1"
+//
+//                }
+//
+//                for _ in 0..<3 {
+//
+//                    for _ in 0..<3 {
+//
+//                        for _ in 0..<4 {
+//
+//                            if (button[buttcheck1] == buttvaluetype) && (button[buttcheck2] == buttvaluetype) && (button[buttcheck3] == buttvaluetype) {
+//
+//                                //println("You win")
+//                                gameplay = "False"
+//                                button = [3,3,3,3,3,3,3,3,3]
+//
+//                                //check whos turn it is in this mess
+//                                if PlayerTurn == "Player1" {
+//
+//                                    //see who was the last winner
+//                                    if PlayerWinner == "Player1" {
+//
+//                                        PlayerWinner = "Player2"
+//
+//                                    //see who was the last winner
+//                                    }else if PlayerWinner == "Player2"{
+//
+//                                        PlayerWinner = "Player1"
+//                                    }
+//
+//
+//                                    //check whos turn it is
+//                                }else if PlayerTurn == "Player2" {
+//
+//                                    //see who was the last winner
+//                                    if PlayerWinner == "Player1" {
+//
+//                                        PlayerWinner = "Player1"
+//
+//                                    //see who was the last winner
+//                                    }else if PlayerWinner == "Player2"{
+//
+//                                        PlayerWinner = "Player2"
+//
+//                                    }
+//
+//                                }
+//                                scoreModifier()
+//                                //println(PlayerWinner)
+//                                break
+//                            }
+//
+//                            buttcheck1 = buttcheck1 + buttIncrement
+//                            buttcheck2 = buttcheck2 + buttIncrement
+//                            buttcheck3 = buttcheck3 + buttIncrement
+//
+//                        }//end of third for loop
+//
+//                        buttcheck1 = 0
+//                        buttcheck2 = 3
+//                        buttcheck3 = 6
+//                        buttIncrement = 1
+//
+//                    }//end of second for loop
+//
+//                    if (button[0] == buttvaluetype) && (button[4] == buttvaluetype) && (button[8] == buttvaluetype) {
+//                        //println("You win negative diagonal")
+//                        gameplay = "False"
+//                        button = [3,3,3,3,3,3,3,3,3]
+//
+//                        //check whos turn it is in this mess
+//                        if PlayerTurn == "Player1" {
+//
+//                            //see who was the last winner
+//                            if PlayerWinner == "Player1" {
+//
+//                                PlayerWinner = "Player2"
+//
+//                                //see who was the last winner
+//                            }else if PlayerWinner == "Player2"{
+//
+//                                PlayerWinner = "Player1"
+//                            }
+//
+//
+//                            //check whos turn it is
+//                        }else if PlayerTurn == "Player2" {
+//
+//                            //see who was the last winner
+//                            if PlayerWinner == "Player1" {
+//
+//                                PlayerWinner = "Player1"
+//
+//                                //see who was the last winner
+//                            }else if PlayerWinner == "Player2"{
+//
+//                                PlayerWinner = "Player2"
+//
+//                            }
+//
+//                        }
+//                        scoreModifier()
+//                        //println(PlayerWinner)
+//                        break
+//                    }
+//                    if (button[2] == buttvaluetype) && (button[4] == buttvaluetype) && (button[6] == buttvaluetype) {
+//                        //println("You win positive diagonal")
+//                        gameplay = "False"
+//                        button = [3,3,3,3,3,3,3,3,3]
+//
+//                        //check whos turn it is in this mess
+//                        if PlayerTurn == "Player1" {
+//
+//                            //see who was the last winner
+//                            if PlayerWinner == "Player1" {
+//
+//                                PlayerWinner = "Player2"
+//
+//                                //see who was the last winner
+//                            }else if PlayerWinner == "Player2"{
+//
+//                                PlayerWinner = "Player1"
+//                            }
+//
+//
+//                            //check whos turn it is
+//                        }else if PlayerTurn == "Player2" {
+//
+//                            //see who was the last winner
+//                            if PlayerWinner == "Player1" {
+//
+//                                PlayerWinner = "Player1"
+//
+//                                //see who was the last winner
+//                            }else if PlayerWinner == "Player2"{
+//
+//                                PlayerWinner = "Player2"
+//
+//                            }
+//
+//                        }
+//                        scoreModifier()
+//                        //println(PlayerWinner)
+//                        break
+//                    }
+//
+//                    buttcheck1 = 0
+//                    buttcheck2 = 1
+//                    buttcheck3 = 2
+//                    buttIncrement = 3
+//                    buttvaluetype = 2
+//
+//                }//end of first loop
+//
+//
+//                //change the player turn indicator
+//
+//
+//            }
+//
+//        }//end of gameplay if statement
+//
+//    }//end of winning function
+//
+//    func scoreModifier() {
+//
+//        if PlayerWinner == "Player1" {
+//
+//            p1ScoreIncrement = p1ScoreIncrement + 1
+//            self.p1ScoreText.text = String(p1ScoreIncrement)
+//
+//        }else if PlayerWinner == "Player2" {
+//
+//            p2ScoreIncrement = p2ScoreIncrement + 1
+//            self.p2ScoreText.text = String(p2ScoreIncrement)
+//
+//        }
+//    }
+//
+//    //Reset sequence
+//    @IBAction func ResetButton(sender: UIButton) {
+//
+//        if PlayerWinner == "Player2" {
+//
+//            self.p1MarkType.text = "O's"
+//            self.p2MarkType.text = "X's"
+//
+//            self.playerTurnText.text = ">>>"
+//            //rightWin = "True"
+//
+//
+//
+//
+//        }else if PlayerWinner == "Player1"{
+//
+//            self.p1MarkType.text = "X's"
+//            self.p2MarkType.text = "O's"
+//
+//            self.playerTurnText.text = "<<<"
+//            //leftWin = "True"
+//        }
+//
+//        PlayerTurn = "Player1"
+//
+//        //reset button values
+//        button = [0,0,0,0,0,0,0,0,0]
+//
+//
+//
+//        //reset button text to none/null
+//        self.TopLeftText.setTitle("", for: [])
+//        self.TopCenterText.setTitle("", for: [])
+//        self.TopRightText.setTitle("", for: [])
+//        self.MiddleLeftText.setTitle("", for: [])
+//        self.CenterText.setTitle("", for: [])
+//        self.MiddleRightText.setTitle("", for: [])
+//        self.BottomLeftText.setTitle("", for: [])
+//        self.BottomCenterText.setTitle("", for: [])
+//        self.BottomRightText.setTitle("", for: [])
+//
+//        //set gameplay to true
+//        gameplay = "True"
+//
+//    }
+//
+//
     
 }//end of main class
 
