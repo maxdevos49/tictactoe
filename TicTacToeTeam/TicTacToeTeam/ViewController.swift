@@ -68,13 +68,13 @@ class ViewController: UIViewController {
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
                 
-                self.TopLeftText.setTitle("X", forState: UIControlState.Normal)
+                self.TopLeftText.setTitle("X", for: [])
                 
                 button[0] = 1
                 
             }
             else if PlayerTurn == "Player2"{//o is checked
-                self.TopLeftText.setTitle("O", forState: UIControlState.Normal)
+                self.TopLeftText.setTitle("O", for: [])
                 
                 button[0] = 2
             }
@@ -95,12 +95,12 @@ class ViewController: UIViewController {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
-                self.TopCenterText.setTitle("X", forState: UIControlState.Normal)
+                self.TopCenterText.setTitle("X", for: [])
                 
                  button[1] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
-                self.TopCenterText.setTitle("O", forState: UIControlState.Normal)
+                self.TopCenterText.setTitle("O", for: [])
                 
                  button[1] = 2
             }
@@ -119,12 +119,12 @@ class ViewController: UIViewController {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
-                self.TopRightText.setTitle("X", forState: UIControlState.Normal)
+                self.TopRightText.setTitle("X", for: [])
                 
                 button[2] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
-                self.TopRightText.setTitle("O", forState: UIControlState.Normal)
+                self.TopRightText.setTitle("O", for: [])
                 
                 button[2] = 2
             }
@@ -144,12 +144,12 @@ class ViewController: UIViewController {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
-                self.MiddleLeftText.setTitle("X", forState: UIControlState.Normal)
+                self.MiddleLeftText.setTitle("X", for: [])
                 
                 button[3] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
-                self.MiddleLeftText.setTitle("O", forState: UIControlState.Normal)
+                self.MiddleLeftText.setTitle("O", for: [])
                 
                 button[3] = 2
             }
@@ -169,12 +169,12 @@ class ViewController: UIViewController {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
-                self.CenterText.setTitle("X", forState: UIControlState.Normal)
+                self.CenterText.setTitle("X", for: [])
                 
                 button[4] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
-                self.CenterText.setTitle("O", forState: UIControlState.Normal)
+                self.CenterText.setTitle("O", for: [])
                 
                 button[4] = 2
             }
@@ -194,12 +194,12 @@ class ViewController: UIViewController {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
-                self.MiddleRightText.setTitle("X", forState: UIControlState.Normal)
+                self.MiddleRightText.setTitle("X", for: [])
                 
                 button[5] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
-                self.MiddleRightText.setTitle("O", forState: UIControlState.Normal)
+                self.MiddleRightText.setTitle("O", for: [])
                 
                 button[5] = 2
             }
@@ -217,12 +217,12 @@ class ViewController: UIViewController {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{
-                self.BottomLeftText.setTitle("X", forState: UIControlState.Normal)
+                self.BottomLeftText.setTitle("X", for: [])
                 
                 button[6] = 1
             }
             else if PlayerTurn == "Player2"{
-                self.BottomLeftText.setTitle("O", forState: UIControlState.Normal)
+                self.BottomLeftText.setTitle("O", for: [])
                 
                 button[6] = 2
             }
@@ -241,12 +241,12 @@ class ViewController: UIViewController {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
-                self.BottomCenterText.setTitle("X", forState: UIControlState.Normal)
+                self.BottomCenterText.setTitle("X", for: [])
                 
                 button[7] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
-                self.BottomCenterText.setTitle("O", forState: UIControlState.Normal)
+                self.BottomCenterText.setTitle("O", for: [])
                 
                 button[7] = 2
             }
@@ -265,13 +265,13 @@ class ViewController: UIViewController {
             
             //check if its x's or o's turn
             if PlayerTurn == "Player1"{//x is checked
-                self.BottomRightText.setTitle("X", forState: UIControlState.Normal)
+                self.BottomRightText.setTitle("X", for: [])
                 
                 
                 button[8] = 1
             }
             else if PlayerTurn == "Player2"{//o is checked
-                self.BottomRightText.setTitle("O", forState: UIControlState.Normal)
+                self.BottomRightText.setTitle("O", for: [])
                 
                 
                 button[8] = 2
@@ -327,11 +327,11 @@ class ViewController: UIViewController {
                     
                 }
                 
-                for a = 1;a <= 2; ++a {
+                for a in 0..<3 {
                     
-                    for b = 1; b <= 2; ++b {
+                    for b in 0..<3 {
                         
-                        for c = 1; c <= 3; ++c {
+                        for c in 0..<4 {
                             
                             if (button[buttcheck1] == buttvaluetype) && (button[buttcheck2] == buttvaluetype) && (button[buttcheck3] == buttvaluetype) {
                                 
@@ -533,15 +533,15 @@ class ViewController: UIViewController {
 
         
         //reset button text to none/null
-        self.TopLeftText.setTitle("", forState: UIControlState.Normal)
-        self.TopCenterText.setTitle("", forState: UIControlState.Normal)
-        self.TopRightText.setTitle("", forState: UIControlState.Normal)
-        self.MiddleLeftText.setTitle("", forState: UIControlState.Normal)
-        self.CenterText.setTitle("", forState: UIControlState.Normal)
-        self.MiddleRightText.setTitle("", forState: UIControlState.Normal)
-        self.BottomLeftText.setTitle("", forState: UIControlState.Normal)
-        self.BottomCenterText.setTitle("", forState: UIControlState.Normal)
-        self.BottomRightText.setTitle("", forState: UIControlState.Normal)
+        self.TopLeftText.setTitle("", for: [])
+        self.TopCenterText.setTitle("", for: [])
+        self.TopRightText.setTitle("", for: [])
+        self.MiddleLeftText.setTitle("", for: [])
+        self.CenterText.setTitle("", for: [])
+        self.MiddleRightText.setTitle("", for: [])
+        self.BottomLeftText.setTitle("", for: [])
+        self.BottomCenterText.setTitle("", for: [])
+        self.BottomRightText.setTitle("", for: [])
         
         //set gameplay to true
         gameplay = "True"
