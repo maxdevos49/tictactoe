@@ -109,7 +109,7 @@ class ViewController: UIViewController {
 //
 //        self.winning()
 //    }
-//
+
 //    //Top center button code
 //    @IBAction func TopCenterButton(sender: UIButton) {
 //

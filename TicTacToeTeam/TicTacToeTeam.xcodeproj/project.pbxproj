@@ -162,7 +162,7 @@
 				TargetAttributes = {
 					EB8C15891B25402A005A274D = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = U863RV3P5Q;
+						DevelopmentTeam = 978UX3DJZ6;
 					};
 					EB8C159E1B25402B005A274D = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -369,11 +369,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = U863RV3P5Q;
+				DEVELOPMENT_TEAM = 978UX3DJZ6;
 				INFOPLIST_FILE = TicTacToeTeam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.freakingwork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freakingworkplease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,11 +386,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = U863RV3P5Q;
+				DEVELOPMENT_TEAM = 978UX3DJZ6;
 				INFOPLIST_FILE = TicTacToeTeam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.freakingwork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freakingworkplease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
